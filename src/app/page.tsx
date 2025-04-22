@@ -2,10 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Link2, Github } from "lucide-react";
 import * as React from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const menu_buttons_style = "w-[100%] bg-transparent text-[15px] py-[20px] px-[10px] text-stone-400 hover:bg-stone-900"
   const [showLink, setShowLink] = React.useState(false);
+  const router = useRouter();
+
   return (
     <div className="flex justify-center h-full w-full">
       <div className="p-2  my-auto font-mono w-[400px]">
@@ -21,7 +24,7 @@ export default function Home() {
             About
             <ChevronRight size={20} className="ml-auto" />
           </Button>
-          <Button className={menu_buttons_style}>
+          <Button className={menu_buttons_style} onClick={() => router.push("/projects")}>
             Projects
             <ChevronRight size={20} className="ml-auto" />
           </Button>
