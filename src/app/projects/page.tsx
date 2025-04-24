@@ -8,7 +8,7 @@ import React from 'react';
 const projects = [
     {
         name: "Mindful Nest",
-        description: "Aplicativo desenvolvido para o projeto interdisciplinar da ETEC De Taboão Da Serra - 2ºA 2024. ",
+        description: "Aplicativo desenvolvido para o projeto interdisciplinar da ETEC De Taboão Da Serra - 2ºA.",
         image: null,
         link: "https://github.com/https-dre/mindful-nest-app",
         year: 2024
@@ -22,7 +22,7 @@ const projects = [
     },
     {
         name: "Wikimedic",
-        description: "Sistema para consulta e gerenciamento de bulas digitais.",
+        description: "Sistema para consulta e gerenciamento de bulas digitais. Desenvolvido para o projeto interdisciplinar da ETEC De Taboão Da Serra - 1ºA.",
         image: null,
         link: "https://github.com/https-dre/server-wikimedic",
         year: 2023
