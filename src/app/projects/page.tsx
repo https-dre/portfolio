@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import Header from "@/components/Header";
 import Project from "@/components/Project";
 import React from 'react';
@@ -32,15 +33,28 @@ const projects = [
 const Projects = () => {
     const router = useRouter();
     const [year, setYear] = React.useState("All");
+    const [searchContent, setSearchContent] = React.useState("");
 
     const years_list = React.useMemo(() => {
         return [...new Set(projects.map(project => project.year))];
     }, []);
 
     const filteredProjects = React.useMemo(() => {
-        if (year === "All") return projects;
-        return projects.filter(project => project.year === parseInt(year));
-    }, [year]);
+        if (year === "All" && searchContent.trim() == "") return projects;
+        
+        if (searchContent.trim() == "") {
+            return projects.filter(project => project.year === parseInt(year));
+        }
+
+        if (year === "All") {
+            return projects.filter(project => project.name.toLowerCase()
+            .includes(searchContent.toLowerCase()));
+        }
+
+        return projects.filter(project => project.year === parseInt(year) && project.name.toLowerCase()
+            .includes(searchContent.toLowerCase()));
+
+    }, [year, searchContent]);
 
     return (
         <div className="flex flex-col lg:items-center font-mono p-12">
@@ -51,23 +65,32 @@ const Projects = () => {
                 <h1 className="text-4xl font-bold">Projects</h1>
                 <p className="text-stone-300 my-2">Explore my portfolio of projects.</p>
 
-                <div className="my-2">
-                    <Button
-                        variant={year === "All" ? "default" : "ghost"}
-                        onClick={() => setYear("All")}
-                    >
-                        All
-                    </Button>
-                    {years_list.map(yearItem => (
+                <div className="my-[20px] flex items-center justify-between">
+                    <div>
                         <Button
-                            key={yearItem}
-                            variant={year === yearItem.toString() ? "default" : "ghost"}
-                            onClick={() => setYear(yearItem.toString())}
+                            variant={year === "All" ? "default" : "ghost"}
+                            onClick={() => setYear("All")}
                         >
-                            {yearItem}
+                            All
                         </Button>
-                    ))}
+                        {years_list.map(yearItem => (
+                            <Button
+                                key={yearItem}
+                                variant={year === yearItem.toString() ? "default" : "ghost"}
+                                onClick={() => setYear(yearItem.toString())}
+                            >
+                                {yearItem}
+                            </Button>
+                        ))}
+                    </div>
+                    <div className="flex w-[350px] relative border rounded-lg p-2 focus:outline-none">
+                        <input type="text" placeholder="Search..." className="border-0 focus:outline-none w-[90%]"
+                            onChange={(e) => setSearchContent(e.target.value)} value={searchContent} />
+                        <Search className="absolute m-0 text-stone-400 right-[10px]" />
+                    </div>
+
                 </div>
+
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
