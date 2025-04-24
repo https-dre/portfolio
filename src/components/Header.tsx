@@ -15,10 +15,12 @@ const Header = () => {
     const router = useRouter();
     return (
         <header className="flex items-center justify-between h-[60px] mb-[40px]">
-            <Button className="p-[0px]" variant={"ghost"} onClick={() => router.back()}>
+            <button className="p-[0px] flex items-center gap-2 cursor-pointer" 
+            
+                onClick={() => router.back()}>
                 <ChevronLeft size={20} className="text-stone-400" />
                 Voltar
-            </Button>
+            </button>
 
             <nav>
                 {navItems.map((item) => (
