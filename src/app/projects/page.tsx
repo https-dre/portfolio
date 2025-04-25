@@ -10,14 +10,14 @@ const projects = [
     {
         name: "Mindful Nest",
         description: "Aplicativo desenvolvido para o projeto interdisciplinar da ETEC De Taboão Da Serra - 2ºA.",
-        image: null,
+        image: "/mindful-nest.png",
         link: "https://github.com/https-dre/mindful-nest-app",
         year: 2024
     },
     {
         name: "The Green Family",
         description: "Aplicativo desenvolvido para competir na 8º ONDA (Olimpíada Nacional De Aplicativos).",
-        image: null,
+        image: "/the-green-family.png",
         link: "https://github.com/https-dre/the-green-family",
         year: 2024
     },

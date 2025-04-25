@@ -20,10 +20,10 @@ const Project = (props: ProjectProps) => {
         className="relative flex flex-col max-w-[400px] gap-0 font-mono border-[2px] rounded-lg">
         {
             props.image ? (
-                <img src={props.image} alt="Project Image" className="w-[100%] h-[200px] rounded-t-lg" />
+                <img src={props.image} alt="Project Image" className="w-[100%] min-h-[270px] rounded-t-lg" />
             )
                 : (
-                    <Skeleton className="w-[100%] h-[200px]" />
+                    <Skeleton className="w-[100%] min-h-[270px]" />
                 )
         }
 
