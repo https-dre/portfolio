@@ -25,7 +25,7 @@ const projects = [
         name: "Wikimedic",
         description: "Sistema para consulta e gerenciamento de bulas digitais. Desenvolvido para o projeto interdisciplinar da ETEC De Taboão Da Serra - 1ºA.",
         image: null,
-        link: "https://github.com/https-dre/server-wikimedic",
+        link: "https://github.com/https-dre/server_wikimedic",
         year: 2023
     }
 ]
