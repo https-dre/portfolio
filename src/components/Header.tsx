@@ -5,10 +5,10 @@ import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 
 const navItems = [
-    { name: "About", href: "/about" },
+    { name: "About", href: "/unknown" },
     { name: "Projects", href: "/projects" },
-    { name: "Shop", href: "/shop" },
-    { name: "Contact", href: "/contact" }
+    { name: "Shop", href: "/unknown" },
+    { name: "Contact", href: "/unknown" }
 ]
 
 const Header = () => {
