@@ -5,7 +5,7 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const menu_buttons_style = "w-[100%] bg-transparent text-[15px] py-[20px] px-[10px] text-stone-400 hover:bg-stone-900"
+  const menu_buttons_style = "w-[100%] bg-transparent text-[15px] py-[20px] px-[10px] text-stone-400 hover:bg-stone-900 cursor-pointer"
   const [showLink, setShowLink] = React.useState(false);
   const router = useRouter();
 
@@ -20,19 +20,19 @@ export default function Home() {
         <p className="text-stone-400 mb-[20px]">Back-End Developer / Freelancer</p>
         <p className="text-stone-300">MENU</p>
         <div className="py-[20px]">
-          <Button className={menu_buttons_style}>
+          <Button className={menu_buttons_style} onClick={() => router.push("/unknown")}>
             About
             <ChevronRight size={20} className="ml-auto" />
           </Button>
           <Button className={menu_buttons_style} onClick={() => router.push("/projects")}>
             Projects
-            <ChevronRight size={20} className="ml-auto" />
+            <ChevronRight size={20} className="ml-auto"/>
           </Button>
-          <Button className={menu_buttons_style}>
+          <Button className={menu_buttons_style} onClick={() => router.push("/unknown")}>
             Shop
-            <ChevronRight size={20} className="ml-auto" />
+            <ChevronRight size={20} className="ml-auto"/>
           </Button>
-          <Button className={menu_buttons_style}>
+          <Button className={menu_buttons_style} onClick={() => router.push("/unknown")}>
             Contact
             <ChevronRight size={20} className="ml-auto" />
           </Button>

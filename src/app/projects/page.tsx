@@ -58,7 +58,7 @@ const Projects = () => {
 
     return (
         <div className="flex flex-col lg:items-center font-mono p-12">
-            <div className="max-w-6xl">
+            <div className="max-w-6xl lg:min-w-6xl">
                 <Header />
 
 
